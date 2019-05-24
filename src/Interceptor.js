@@ -1,45 +1,45 @@
 import {debug_console} from "./debug_console.js"
 
   /**
-   * 日志拦截处理器类
-   * 注意本功能会对原始记录进行包装，比如原始记录：{ msg: "我是一条记录"}
-   * 节流处理后，这条记录可能被删除，也可能输出，如果这条记录被输出将转换为 {addtime: timenumber, reporttime:timenumber, times: number, origin: {msg: "我是一条记录"} }
-   * @class Interceptor 
-   * @description 对指定时间内的重复日志节流统计上报
+   * @class Interceptor
+   * @classdesc 日志拦截处理器类 - 对指定时间内的重复日志节流统计上报
+   * @description 注意本功能会对原始记录进行包装，比如原始记录：{ msg: "我是一条记录"},节流处理后，这条记录可能被删除，也可能输出，如果这条记录被输出将转换为 {addtime: timenumber, reporttime:timenumber, times: number, origin: {msg: "我是一条记录"} }
    * @param {object} option - 提供配置的对象
    * @param {function=} option.diff - 俩条记录的判重函数
    * @param {function=} option.report - 节流后的记录输出
    * @param {number} [option.delay=5000] - 单位ms
-   * @author 069810
+   * @author 069810-言月 <tanpf2012@163.com>
    * @date 2019-05-23
    * @returns null
    */
-  function Interceptor(option){
+  class Interceptor {
 
-    // 对连续5000毫秒时间间隔内的请求进行节流
-    this.delay = option.delay ? option.delay : 5000;
+    constructor(option) {
+      // 对连续5000毫秒时间间隔内的请求进行节流
+      this.delay = option.delay ? option.delay : 5000;
 
-    this.dff = option.diff ? option.diff : function(o, n) { return o.msg === o.msg }
+      this.dff = option.diff ? option.diff : function(o, n) { return o.msg === o.msg }
 
-    // 上报总次数
-    this.totaltimes = 0;
+      // 上报总次数
+      this.totaltimes = 0;
 
-    // 上报处理器在队列中的id
-    this.timeoutId = null;
+      // 上报处理器在队列中的id
+      this.timeoutId = null;
 
-    // 上一条引用
-    this.pre = null;
+      // 上一条引用
+      this.pre = null;
 
-    // 重复开始时间, 第一次重复的时候记录
-    this.repeattime = null;
-    this.repeat  = false;
-
+      // 重复开始时间, 第一次重复的时候记录
+      this.repeattime = null;
+      this.repeat  = false;
+    }
     /**
      * @description 添加记录函数
      * @param {object} item - 日志记录对象
      * @returns this - 方便链式调用方法
+     * @memberof Interceptor
      */
-    this.add = function add(item) {
+    add(item) {
 
       debug_console('添加记录', item);
 
@@ -144,12 +144,12 @@ import {debug_console} from "./debug_console.js"
     /**
      * @param {object} item - 节流后日志记录
      * @returns this
+     * @memberof Interceptor
      */
-    this.report = function(item) {
+    report (item) {
       debug_console('report', item, "times:", ++this.totaltimes)
       return this;
     }
   }
-
 
   export {Interceptor}

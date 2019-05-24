@@ -1,6 +1,6 @@
 /**
  * @description 日志记录类
- * @author 069810
+ * @author 069810-言月 <tanpf2012@163.com>
  * @date 2019-05-24
  * @class Log
  */
@@ -13,13 +13,6 @@ class Log {
    */
   static logId = 0;
   
-  /**
-   *Creates an instance of Log.
-   * @author 069810
-   * @date 2019-05-24
-   * @param {*} {type, msg}
-   * @memberof Log
-   */
   constructor({type, msg}){
     this._id = Log.logId++
     this._type = type

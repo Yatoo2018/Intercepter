@@ -3,18 +3,12 @@ import {Log} from "./Log"
 
 /**
  * @description 主要业务应用入口类
- * @author 069810
+ * @author 069810-言月 <tanpf2012@163.com>
  * @date 2019-05-24
  * @class Main
  */
 class Main{
 
-  /**
-   * Creates an instance of Main.
-   * @author 069810
-   * @date 2019-05-24
-   * @memberof Main
-   */
   constructor(){ 
     this.interceptor = new LogInterceptor({
       diff: function(o,n){
@@ -22,10 +16,9 @@ class Main{
       }
     })
   }
-  
+
   /**
    * @description 每500毫秒添加一条重复的日志记录，添加10条
-   * @author 069810
    * @date 2019-05-24
    * @memberof Main
    */
@@ -43,7 +36,6 @@ class Main{
 
   /**
    * @description 添加3个不同的日志记录
-   * @author 069810
    * @date 2019-05-24
    * @memberof Main
    */
