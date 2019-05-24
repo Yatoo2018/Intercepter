@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack --config webpack.config.js",
     "test": "jest",
-    "jsdoc": "jsdoc src -r -c ./jsdoc/jsdoc.config.js -d docs"
+    "jsdoc": "rm -rf docs && jsdoc src -r -c ./jsdoc/jsdoc.config.js -d docs"
   },
   "author": "",
   "license": "ISC",
