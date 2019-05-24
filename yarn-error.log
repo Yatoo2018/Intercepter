@@ -1,0 +1,54 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /Users/rs/.rvm/gems/ruby-2.4.1/bin:/Users/rs/.rvm/gems/ruby-2.4.1@global/bin:/Users/rs/.rvm/rubies/ruby-2.4.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/rs/.rvm/gems/ruby-2.4.1/bin:/Users/rs/.rvm/gems/ruby-2.4.1@global/bin:/Users/rs/.rvm/rubies/ruby-2.4.1/bin:/Applications/android_sdk_tools/android-sdk-macosx/tools:/Applications/android_sdk_tools/android-sdk-macosx/platform-tools:/Applications/android_sdk_tools/android-sdk-macosx/tools/bin:/Applications/flutter/bin:/Users/rs/.rvm/bin:/Applications/android_sdk_tools/android-sdk-macosx/tools:/Applications/android_sdk_tools/android-sdk-macosx/platform-tools:/Applications/android_sdk_tools/android-sdk-macosx/tools/bin:/Applications/flutter/bin
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  8.11.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/Users/rs/Library/Caches/Yarn/v2/npm-locate-path-5.0.0-1afba396afd676a6d42504d0a67a3a7eb9f62aa0/license' -> '/Users/rs/github.com/Intercepter/node_modules/husky/node_modules/locate-path/license'
+
+npm manifest: 
+  {
+    "name": "intercepter",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "webpack --config webpack.config.js",
+      "test": "jest",
+      "jsdoc":"jsdoc src -r -c ./jsdoc/jsdoc.config.js -d docs"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "webpack": "^4.32.2"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.4.5",
+      "@babel/preset-env": "^7.4.5",
+      "babel-jest": "^24.8.0",
+      "husky": "^2.3.0",
+      "jest": "^24.8.0",
+      "webpack-cli": "^3.3.2"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "npm test"
+      }
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

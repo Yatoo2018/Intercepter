@@ -6,11 +6,12 @@
   "scripts": {
     "start": "webpack --config webpack.config.js",
     "test": "jest",
-    "jsdoc":"jsdoc src -r -c ./jsdoc/jsdoc.config.js -d docs"
+    "jsdoc": "jsdoc src -r -c ./jsdoc/jsdoc.config.js -d docs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "webpack": "^4.32.2"
   },
   "devDependencies": {
