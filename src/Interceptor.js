@@ -6,10 +6,10 @@ import {debug_console} from "./debug_console.js"
    * 节流处理后，这条记录可能被删除，也可能输出，如果这条记录被输出将转换为 {addtime: timenumber, reporttime:timenumber, times: number, origin: {msg: "我是一条记录"} }
    * @class Interceptor 
    * @description 对指定时间内的重复日志节流统计上报
-   * @params {object} option - 提供配置的对象
-   * @params {function=} option.diff - 俩条记录的判重函数
-   * @params {function=} option.report - 节流后的记录输出
-   * @params {number} [option.delay=5000] - 单位ms
+   * @param {object} option - 提供配置的对象
+   * @param {function=} option.diff - 俩条记录的判重函数
+   * @param {function=} option.report - 节流后的记录输出
+   * @param {number} [option.delay=5000] - 单位ms
    * @author 069810
    * @date 2019-05-23
    * @returns null
@@ -36,7 +36,7 @@ import {debug_console} from "./debug_console.js"
 
     /**
      * @description 添加记录函数
-     * @params {object} item - 日志记录对象
+     * @param {object} item - 日志记录对象
      * @returns this - 方便链式调用方法
      */
     this.add = function add(item) {
@@ -142,10 +142,12 @@ import {debug_console} from "./debug_console.js"
     }
 
     /**
-     * @params - item 节流后请求输出位置
+     * @param {object} item - 节流后日志记录
+     * @returns this
      */
     this.report = function(item) {
       debug_console('report', item, "times:", ++this.totaltimes)
+      return this;
     }
   }
 

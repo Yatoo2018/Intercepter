@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: Log.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,74 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: Log.js</h1>
 
     
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @description 日志记录类
+ * @author 069810
+ * @date 2019-05-24
+ * @class Log
+ */
+class Log {
+  
+  /**
+   * @description 日志id
+   * @static
+   * @memberof Log
+   */
+  static logId = 0;
+  
+  /**
+   *Creates an instance of Log.
+   * @author 069810
+   * @date 2019-05-24
+   * @param {*} {type, msg}
+   * @memberof Log
+   */
+  constructor({type, msg}){
+    this._id = Log.logId++
+    this._type = type
+    this._msg = msg
+  }
+  /**
+   * @description 日志的类型
+   * @memberof Log
+   */
+  set type(value) {
+    this._type = value
+  }
+  get type() {
+    return this._type
+  }
+  /**
+   * @description 日志的id
+   * @readonly
+   * @memberof Log
+   */
+  get id() {
+    return this._id
+  }
+  /**
+   * @description 日志的信息
+   * @memberof Log
+   */
+  set msg(value) {
+    this._msg = value
+  }
+  get msg() {
+    return this._msg
+  }
+}
+export {Log}</code></pre>
+        </article>
+    </section>
 
 
 

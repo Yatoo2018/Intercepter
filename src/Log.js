@@ -1,19 +1,52 @@
-var logId = 0;
+/**
+ * @description 日志记录类
+ * @author 069810
+ * @date 2019-05-24
+ * @class Log
+ */
 class Log {
+  
+  /**
+   * @description 日志id
+   * @static
+   * @memberof Log
+   */
+  static logId = 0;
+  
+  /**
+   *Creates an instance of Log.
+   * @author 069810
+   * @date 2019-05-24
+   * @param {*} {type, msg}
+   * @memberof Log
+   */
   constructor({type, msg}){
-    this._id = logId++
+    this._id = Log.logId++
     this._type = type
     this._msg = msg
   }
+  /**
+   * @description 日志的类型
+   * @memberof Log
+   */
   set type(value) {
     this._type = value
   }
   get type() {
     return this._type
   }
+  /**
+   * @description 日志的id
+   * @readonly
+   * @memberof Log
+   */
   get id() {
     return this._id
   }
+  /**
+   * @description 日志的信息
+   * @memberof Log
+   */
   set msg(value) {
     this._msg = value
   }
