@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
     "test": "jest",
     "jsdoc": "rm -rf docs && jsdoc src -r -c ./jsdoc/jsdoc.config.js -d docs"
   },
