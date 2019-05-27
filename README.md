@@ -1,4 +1,4 @@
-# Intercepter
+# Interceptor
 
 日志节流拦截器
 
